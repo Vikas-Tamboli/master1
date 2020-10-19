@@ -20,7 +20,7 @@ pipeline{
    stage("Repo_clone"){
        //Clone repo from GitHub
       steps {
-         checkout ([$class: 'GitSCM', branches: [[name: '^(?!.*master).*$']], userRemoteConfigs: [[credentialsId: 'instance_id', url: 'git@github.com:Vikas-Tamboli/master1.git']]])
+         checkout ([$class: 'GitSCM', branches: [[name: '*/vikas']], userRemoteConfigs: [[credentialsId: 'instance_id', url: 'git@github.com:Vikas-Tamboli/master1.git']]])
 
 }
 }
@@ -30,6 +30,7 @@ pipeline{
      steps{
       script{
        sh '''
+            
             cd /root/github/master1/infra
             bash plugins.sh
             cd -
