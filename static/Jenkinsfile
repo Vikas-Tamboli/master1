@@ -30,7 +30,7 @@ pipeline{
      steps{
       script{
        sh '''
-            cd root/github/master1/infra
+            cd /root/github/master1/infra
             bash plugins.sh
             cd -
        '''
